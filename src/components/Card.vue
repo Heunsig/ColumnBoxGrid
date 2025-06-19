@@ -56,6 +56,7 @@ defineProps<{
 }
 
 .card__body--no-description {
+  margin-top: 0;
   grid-template-rows: minmax(0rem, 0fr);
 }
 
