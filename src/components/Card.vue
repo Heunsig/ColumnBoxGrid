@@ -34,8 +34,6 @@ defineProps<{
 
 <style scoped>
 .card {
-  display: flex;
-  flex-direction: column;
   background-color: #fff;
   border-radius: 0.5rem;
   border: 1px solid #e0e0e0;
@@ -50,9 +48,21 @@ defineProps<{
 }
 .card__body {
   margin-top: 0.5rem;
+
+  /* 중요 파트 */
   display: grid;
   grid-template-rows: minmax(1.5rem, 0fr);
   transition: grid-template-rows 0.3s ease;
+}
+
+.card__body-inner {
+  /* 중요 파트 */
+  overflow: hidden;
+}
+
+.card:hover .card__body {
+  /* 중요 파트 */
+  grid-template-rows: minmax(1.5rem, 1fr);
 }
 
 .card__body--no-description {
@@ -60,20 +70,9 @@ defineProps<{
   grid-template-rows: minmax(0rem, 0fr);
 }
 
-.card:hover .card__body {
-  grid-template-rows: minmax(1.5rem, 1fr);
-}
-
-.card__body-inner {
-  overflow: hidden;
-}
-
 .card__description {
-  min-height: 1.5rem;
   font-size: .875rem;
   color: #71717a;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .card__description > p {
