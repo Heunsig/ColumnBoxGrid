@@ -18,7 +18,7 @@ const items = computed(() => {
     {
       id: 3,
       name: 'Item 3',
-      description: 'Description 3',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
     },
     {
       id: 4,
@@ -46,8 +46,7 @@ const items = computed(() => {
 </script>
 
 <template>
-  <div>
-    <h1>Hello World</h1>
+  <div class="container">
     <BoxContainer 
       :items="items"
     >
@@ -57,3 +56,14 @@ const items = computed(() => {
     </BoxContainer>
   </div>
 </template>
+
+<style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 35rem;
+  margin: 0 auto;
+}
+</style>

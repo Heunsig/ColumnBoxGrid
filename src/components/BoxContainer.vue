@@ -40,9 +40,11 @@ const columns = computed(() => {
   display: flex;
   gap: 1rem;
 
-  &__column {
+  .box-container__column {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 }
 </style>

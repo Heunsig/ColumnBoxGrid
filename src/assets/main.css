@@ -1,0 +1,8 @@
+html {
+  background-color: #fafafa;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+* { 
+  box-sizing: border-box;
+}
