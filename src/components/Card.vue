@@ -49,19 +49,19 @@ defineProps<{
 .card__body {
   margin-top: 0.5rem;
 
-  /* 중요 파트 */
+  /* auto-height 전환 애니메이션 핵심 로직 */
   display: grid;
   grid-template-rows: minmax(1.5rem, 0fr);
   transition: grid-template-rows 0.3s ease;
 }
 
 .card__body-inner {
-  /* 중요 파트 */
+  /* auto-height 전환 애니메이션 핵심 로직 */
   overflow: hidden;
 }
 
 .card:hover .card__body {
-  /* 중요 파트 */
+  /* auto-height 전환 애니메이션 핵심 로직 */
   grid-template-rows: minmax(1.5rem, 1fr);
 }
 
