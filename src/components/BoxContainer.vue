@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<{
 
 const totalItems = computed(() => props.items.length);
 
+// 여러 컬럼에 왼쪽에서 오른쪽으로 1, 2, 3 순서로 배치하는 핵심 로직
 const columns = computed(() => {
   const cols: Array<T[]> = Array.from({ length: props.columnsCount }, () => []);
 

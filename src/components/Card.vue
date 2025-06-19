@@ -51,7 +51,7 @@ defineProps<{
 
   /* auto-height 전환 애니메이션 핵심 로직 */
   display: grid;
-  grid-template-rows: minmax(1.5rem, 0fr);
+  grid-template-rows: minmax(1.25rem, 0fr);
   transition: grid-template-rows 0.3s ease;
 }
 
@@ -62,7 +62,7 @@ defineProps<{
 
 .card:hover .card__body {
   /* auto-height 전환 애니메이션 핵심 로직 */
-  grid-template-rows: minmax(1.5rem, 1fr);
+  grid-template-rows: minmax(1.25rem, 1fr);
 }
 
 .card__body--no-description {
