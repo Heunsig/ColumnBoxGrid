@@ -38,13 +38,13 @@ const columns = computed(() => {
 <style scoped>
 .box-container {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 
   .box-container__column {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }
 </style>

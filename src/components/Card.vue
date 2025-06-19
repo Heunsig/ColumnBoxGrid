@@ -1,27 +1,22 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
-const props = defineProps<{
+defineProps<{
   name: string,
   description: string,
 }>()
-
-const truncatedDescription = computed(() => {
-  return props.description.length > 10 
-    ? props.description.slice(0, 30) + '...' 
-    : props.description
-})
 </script>
 
 <template>
   <div class="card">
     <h2 class="card__title">{{ name }}</h2>
-    <div class="card__preview">
-      {{ truncatedDescription }}
-    </div>
-    <div class="card__body">
+    <div 
+      class="card__body"
+      :class="{ 'card__body--no-description': !description }"
+    >
       <div class="card__body-inner">
-        <div class="card__description">
+        <div 
+          v-if="description"
+          class="card__description"
+        >
           <p>{{ description }}</p>
         </div>
         <div class="card__actions">
@@ -41,7 +36,6 @@ const truncatedDescription = computed(() => {
 .card {
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: #fff;
   border-radius: 0.5rem;
   border: 1px solid #e0e0e0;
@@ -51,35 +45,22 @@ const truncatedDescription = computed(() => {
 
 .card__title {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
   font-size: 1rem;
+  font-weight: bold;
 }
-
-.card__preview {
-  font-size: 0.875rem;
-  color: #71717a;
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-  pointer-events: none;
-}
-
 .card__body {
+  margin-top: 0.5rem;
   display: grid;
-  grid-template-rows: 0fr;
-  overflow: hidden;
-  transition: grid-template-rows 0.3s ease-out;
+  grid-template-rows: minmax(1.5rem, 0fr);
+  transition: grid-template-rows 0.3s ease;
 }
 
-.card:hover .card__preview {
-  visibility: hidden;
-  opacity: 0;
-  height: 0px;
+.card__body--no-description {
+  grid-template-rows: minmax(0rem, 0fr);
 }
 
 .card:hover .card__body {
-  grid-template-rows: 1fr;
+  grid-template-rows: minmax(1.5rem, 1fr);
 }
 
 .card__body-inner {
@@ -87,6 +68,7 @@ const truncatedDescription = computed(() => {
 }
 
 .card__description {
+  min-height: 1.5rem;
   font-size: .875rem;
   color: #71717a;
   overflow: hidden;
